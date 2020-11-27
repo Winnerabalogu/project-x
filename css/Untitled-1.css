@@ -1,0 +1,244 @@
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    background: none;
+}
+.container-left, .container-right{
+    width: 50%;
+    height: 100%;
+}
+.container-left{
+    margin-right: auto;
+     background-image: linear-gradient(
+        to right bottom, 
+       rgba(100, 41, 155, 0.6),
+       rgba(19, 100, 37, 0.6)
+    ),
+     url('../image/fernando-hernandez-EW0eiWASBDA-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+   position: relative;
+
+}
+.textbox{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.heading{
+    text-transform: uppercase;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Segoe UI';
+}
+.heading--l{
+    font-size: 30px;
+    letter-spacing: 1px;
+    display: block;
+    font-weight: 400;
+}
+.heading--sm{
+    font-weight: 600;
+}
+.container-right{
+    width: 50%;
+    height: 100%;
+    background-image: url(../image/tryout.jpg);
+    background-size: cover;
+    background-position: center;
+    perspective: 1500px;
+    /* position: relative; */
+ }
+
+ #chk{
+ display: none;
+ }
+  #chk:checked ~ .formbox{
+  animation: 2s animate;
+  transform: rotateY(180deg);
+  }
+  .formbox{
+      width:390px;
+      height:700px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      transition: transform 1s cubic-bezier(0.75, 0, 0.85,1);
+      transform-style: preserve-3d;
+      position: absolute;
+      perspective: 1500px;
+    }
+    .formbox-front,.formbox-back{
+        position: absolute;
+        /* top: 0;
+        left: 0; */
+        width: 100%; 
+        height: 100%;
+        backface-visibility: hidden;
+        perspective: 1500px;
+        transform-style: preserve-3d;
+    perspective: 1500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    background: #ffffff;
+}
+.inner{
+    transform: translateZ(80px) scale(1);
+}
+.formbox-front{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 20px;
+    align-items: center;
+    background-color: #ffffff;
+}
+.login-text{
+    justify-content: center;
+    margin: 40px;
+    margin-top: -90px;
+    padding-top: 0px;
+}
+ h2{
+    margin: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.7em;
+    color:rgb(37, 7, 79);
+    text-align: center;
+}
+form{
+    margin-bottom: -140px;
+}
+input{
+    display: block;
+    width: 95%;
+    margin: 5px;
+    margin-left: 5px;
+    margin-bottom: 20px;
+    padding: 8px 10px;
+    border-top-style: hidden;
+    border-left-style: hidden;
+    border-right-style: hidden;
+    transition: border 200ms ease-out;
+    background: none;
+}
+ input:focus{
+    outline: none;
+}
+input:hover input:active{
+    letter-spacing: 0.02em;
+    color: #000;
+}
+.forgotpass{
+   align-items: center;
+    margin: 10px;
+    margin-left: 30px;
+    
+}
+a{
+    text-decoration: none;
+    padding: 40px;
+    color: #000;
+    font-weight: 600;
+    font-size: 16px;
+}
+#formbtn{
+    margin-top: 20px;
+    margin-left: 30%;
+}
+button{
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 15px;
+    justify-content: center;
+    font-family: sans-serif;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    border: 1px solid  rgb(75, 51, 155);
+    background: #ffffff;
+    align-items: center;
+    
+}
+button:focus{
+    outline: none;
+}
+button:hover,button:active{
+    background:  rgb(75, 51, 155);
+    color: white
+}
+
+p{
+    margin-left: 35px;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.formbox-back{ 
+    justify-content: center;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    width: 350px; 
+    height:710px;
+    /* top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%); */
+    border-radius: 20px;
+    align-items: center;
+    transform:rotateY(180deg);
+
+}
+#formbtn{
+    margin-bottom: 70px;
+}
+.radio{
+    display: flex;
+    /* justify-content: space-around; */
+    margin-left: 10px;
+    margin-right: 20px;
+    color: rgb(104, 100, 100);
+}
+.radio input{
+    margin-right: 10px;
+}
+.sign-up-text input{
+    justify-content: center;
+    margin-bottom: -65px;
+    margin-left: -110px;
+}
+.sign-up-text p{
+    display: flex;
+
+}
+.back-to-login{
+    margin-bottom: 35px;
+    text-align: center;
+}
+ 
+@media screen and (max-width: 780px) {
+   
+    .container-left{
+        display: none;
+        transition: all 2s ease-out;
+    }
+    h2{
+        font-size: 25px;
+    }
+    .container-right{
+        width: 100%;
+    }
+    .formbox-front{
+        margin-top: -10px;
+    }
+    .formbox-back{
+        margin-top: -20px;
+    }
+
+
+}
